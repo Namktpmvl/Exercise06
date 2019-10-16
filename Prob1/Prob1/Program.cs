@@ -11,7 +11,7 @@ namespace Prob1
 
         static void Main(string[] args)
         {
-            Console.WriteLine("What service do u want ? Press 1 for Deposit or 2 for Withdraw.");
+            Console.WriteLine("What service do u want ? Press 1 for Deposit or 2 for Withdraw or 3 to check your money");
 
             int result;
 
@@ -20,19 +20,30 @@ namespace Prob1
 
                 if (result == 1)
                 {
-                    Console.WriteLine("Well, Please enter your money: ");
+                    Account acc = new Account(200000);
+                    Console.WriteLine("Well, Please enter your money you want to deposit: ");
                     string str = Console.ReadLine();
                     int a = Convert.ToInt32(str);
-                    Console.WriteLine("Your money: {0}", a);
+                    acc.Deposit(a);
+                    
 
                 }
 
                 else if (result == 2)
                 {
+                    Account acc = new Account(200000);
                     Console.WriteLine("Well, Please enter your money: ");
                     string str1 = Console.ReadLine();
                     int a = Convert.ToInt32(str1);
-                    Console.WriteLine("Your money: {0}", a);
+                    acc.Withdraw(a);
+                    
+                }
+
+                else if (result ==3)
+                {
+
+                    Account acc = new Account(200000);
+                    acc.balance();
                 }
                 else
 
